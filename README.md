@@ -1,37 +1,29 @@
 # Toy_python
 
-#### 项目介绍
-平常写的python的一些脚本
+## 项目介绍
 
-#### 软件架构
-脚本
+平常一些脚本,用Python编写。
 
+## 安装教程
 
-#### 安装教程
+1. IDE:Pycharm
+2. Python版本：主要是Python3
+3. 操作系统：Windows 64位
 
-1. xxxx
-2. xxxx
-3. xxxx
+## 程序说明
 
-#### 使用说明
+### 1. [autoScript.py](https://git``ee.com/njnussw/Toy_python/blob/master/autoScript.py)
 
-1. xxxx
-2. xxxx
-3. xxxx
+已知一些已知的可能的账号密码，验证这些上网账号是否正确
 
-#### 参与贡献
+### 2. [cn_backup.py](https://gitee.com/njnussw/Toy_python/blob/master/cn_backup.py)
 
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+通过CNBLog导出的xml备份文件生成单个文件
 
+### 3. [copyCode.py](https://gitee.com/njnussw/Toy_python/blob/master/copyCode.py)
 
-#### 码云特技
+设置项目目录、输出文件路径即可进行代码copy,用于申请软件著作权。(Python2)
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [http://git.mydoc.io/](http://git.mydoc.io/)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+### 4. [takeJPG.py](https://gitee.com/njnussw/Toy_python/blob/master/takeJPG.py))
+
+提取URL中所有JPG的超链接，并且下载到指定目录下

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-function: 验证上网账号
+function: 已知一些已知的可能的账号密码，验证这些上网账号是否正确
 """
 
 import time
