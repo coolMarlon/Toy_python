@@ -1,25 +1,19 @@
 # -*- coding: utf-8 -*-
+"""
+function: 验证上网账号
+"""
 
-import sys
 import time
 
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 
-CHROMEDRIVERPATH = "./chromedriver/chromedriver.exe"
-
-default_encoding = "utf-8"
-if (default_encoding != sys.getdefaultencoding()):
-    reload(sys)
-    sys.setdefaultencoding(default_encoding)
-
 from selenium import webdriver
 
+CHROMEDRIVERPATH = "./chromedriver/chromedriver.exe"
 
 
-
-
-def parse(source,info_list):
+def parse(source, info_list):
     for info in info_list:
         try:
             input_uname = info[0]
@@ -48,13 +42,12 @@ def parse(source,info_list):
                 dxservice = driver.find_elements_by_xpath("//div[@id='bch_service_1']")[0]
                 dxservice.click()
 
-
             sure = driver.find_elements_by_xpath("//div[@id='loginLink_div']")[0]
             sure.click()
 
             time.sleep(1)
             if "success" in driver.current_url:
-                print input_uname + " " + input_pwd+" "+str(flag)
+                print(input_uname + " " + input_pwd + " " + str(flag))
                 leave = driver.find_elements_by_xpath("//div[@id='toLogOut']")[0]
                 leave.click()
 
@@ -65,10 +58,9 @@ def parse(source,info_list):
                 # 再次连接页面
                 reconn = driver.find_elements_by_xpath("//div[@id='offlineDiv']")[0]
                 reconn.click()
-        except Exception,e:
+        except Exception as e:
             driver.refresh()
             # print "非联通账号"
-
 
 
 def getWebDriver():
@@ -85,18 +77,17 @@ def getWebDriver():
     return driver
 
 
-
 if __name__ == "__main__":
-    info_list=list()
+    info_list = list()
     file_object = open('net.txt', 'rU')
     try:
         for line in file_object:
-            if line.strip()=="":
+            if line.strip() == "":
                 continue
-            input_uname=line.split()[0]
-            input_pwd= line.split()[1][-6:]
+            input_uname = line.split()[0]
+            input_pwd = line.split()[1][-6:]
             # print input_uname+" "+input_pwd
-            info_list.append([input_uname,input_pwd])
+            info_list.append([input_uname, input_pwd])
     finally:
         file_object.close()
 
@@ -109,8 +100,8 @@ if __name__ == "__main__":
             source = driver.page_source
             break
         except TimeoutException:
-            print 'retry:' + str(canary)
+            print('retry:' + str(canary))
             canary -= 1
     # print(source)
-    parse(source,info_list)
+    parse(source, info_list)
     driver.quit()

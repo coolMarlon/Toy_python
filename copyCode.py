@@ -1,7 +1,8 @@
-#coding=utf-8
+# coding=utf-8
 """
-    设置项目目录、输出文件路径即可进行代码copy
-    用于申请软件著作权。
+function:   设置项目目录、输出文件路径即可进行代码copy,用于申请软件著作权。(Python2)
+input:  proDir = "C:\\Users\\ssw\\Desktop\\Law_Spider"
+output: outFile = "C:\\Users\\ssw\\Desktop\\output.txt"
 """
 import os
 
@@ -11,13 +12,14 @@ outFile = "C:\\Users\\ssw\\Desktop\\output.txt"
 # 项目目录
 proDir = "C:\\Users\\ssw\\Desktop\\Law_Spider"
 
+
 # proDir = "C:\\xampp\\htdocs\\elsearch"
 # 写入目录下的所有文件
 # 返回文件总数
 def writeDir(d):
     count = 0
     fs = os.listdir(d)
-    print (fs)
+    print(fs)
     for f in fs:
         p = d + "/" + f
         if os.path.isdir(p):
@@ -47,14 +49,15 @@ def writeFile(f):
     rf.close()
     return
 
+
 # 删除注释
 def delComment():
-    __of.seek(0,0)
+    __of.seek(0, 0)
     __of_co = open(outFile + ".co", "a+")
     multiline = False
     count = 0
     for l in __of:
-        if l.lstrip().startswith("\"\"\""): # 多行注释
+        if l.lstrip().startswith("\"\"\""):  # 多行注释
             multiline = True
             count += 1
             continue
@@ -65,10 +68,10 @@ def delComment():
         if multiline:
             count += 1
             continue
-        if l.lstrip().startswith("//"): # 间行注释
+        if l.lstrip().startswith("//"):  # 间行注释
             count += 1
             continue
-        if l.isspace(): # 空行
+        if l.isspace():  # 空行
             continue
         __of_co.write(l)
     __of_co.close()
