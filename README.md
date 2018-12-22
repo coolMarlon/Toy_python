@@ -24,6 +24,10 @@
 
 设置项目目录、输出文件路径即可进行代码copy,用于申请软件著作权。(Python2)
 
-### 4. [takeJPG.py](https://gitee.com/njnussw/Toy_python/blob/master/takeJPG.py))
+### 4. [takeJPG.py](https://gitee.com/njnussw/Toy_python/blob/master/takeJPG.py)
 
 提取URL中所有JPG的超链接，并且下载到指定目录下
+
+## 5. [addprefixName.py](https://gitee.com/njnussw/Toy_python/blob/master/addprefixName.py)
+ 
+功能：给定一个目录名，*srcdir*，给此目录下所有文件(文件夹也包括，非递归)添加一个前缀(该文件的创建时间)，格式为yyyy-mm-dd-
